@@ -1,20 +1,24 @@
-import { soma, lerArquivo } from './index.js';
-import { yellow, bgGrey } from 'chalk';
+import { soma, mdLinks } from './index.js';
+import chalk from 'chalk';
+
 
 
 
 const resultado = soma(1, 2);
 
-console.log(yellow(resultado));
+console.log(chalk.yellow(resultado));
 
 const caminhoArquivo = process.argv[2];
-lerArquivo(caminhoArquivo)
+mdLinks(caminhoArquivo)
     .then((conteudoArquivo) => {
-        console.log(bgGrey(conteudoArquivo))
+         console.log(chalk.bgGrey(conteudoArquivo))
+        for (const link of conteudoArquivo) {
+            console.log(chalk.bgGreenBright.bold(link.text) + chalk.bgBlue.bold(' URL: '))
+        }
 
     });
 
-const inputs = process.argv
+const inputs = process.argv[2]
 console.log(inputs)
 
 

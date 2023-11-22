@@ -22,5 +22,10 @@
   },
   "scripts": {
     "test": "jest"
+  },
+
+  "bin":{
+    "md-links":"cli.js"
+
   }
 }
